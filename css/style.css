@@ -9,7 +9,8 @@ body {
 }
 
 #content {
-    margin-top: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     /* background-color: #ddd;
     min-height: 400px; 
     min-width: 400px; */
@@ -21,15 +22,6 @@ body {
     background: #fff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.4);
     margin: 10px 0;
-  }
-
-.match img {
-    max-height: 150px;
-    /* margin: 10px 0 10px 10px; */
-}
-
-.match p {
-    margin-top: -9px;
 }
 
 .label {

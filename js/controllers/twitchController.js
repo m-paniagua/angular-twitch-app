@@ -1,5 +1,4 @@
 myApp.controller('TwitchController', ['$scope', '$q', 'TwitchFactory', function($scope, $q, TwitchFactory) {
-    var userNames = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas", "streamerhouse"]
     $scope.channels = [];
     $scope.streams = [];
 
@@ -7,6 +6,7 @@ myApp.controller('TwitchController', ['$scope', '$q', 'TwitchFactory', function(
         function(channels) {
             for (let index = 0; index < channels.length; index++) {
                 $scope.channels.push(channels[index].data);
+                // console.log(channels[index].data);
             }
         }
     )

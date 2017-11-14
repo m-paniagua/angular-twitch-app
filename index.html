@@ -27,13 +27,13 @@
             <!-- <div ng-repeat="match in user">
                 <h1>{{match.lender_name}}</h1>
             </div> -->
-            <input type="text" ng-model="query" placeholder="Filter results">
+            <input type="text" class="form-control" ng-model="query" placeholder="Filter results">
             <div class="match" ng-repeat="user in channels | filter: {display_name: query}">
                     <div class="row">
-                        <div class="col-sm-2">
+                        <div class="col-sm-4">
                             <img src="{{(user.logo) ? user.logo : 'http://via.placeholder.com/500x500'}}" alt="logo" class="img-responsive center-block img-rounded">
                         </div>
-                        <div class="col-sm-10">
+                        <div class="col-sm-8">
                             <h1><a ng-href="{{user.url}}" target="_blank">{{user.display_name}}</a></h1>
                             <p><i>{{user.status}}</i></p>
                             <span ng-show="streams[$index].stream" class="label label-primary">Live Now</span>
