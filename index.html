@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Twitchtv API</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+</head>
+<body ng-controller="TwitchController">
+    <div class="container-fluid" id="banner">
+        <div class="col-md-8 col-md-offset-2">
+            <img class="img-responsive center-block" src="img/twitch.png" alt="twitchtv">
+        </div>
+    </div>
+
+    <div class="container" >
+        <div class="col-md-8 col-md-offset-2" id="content">
+            <!-- <div ng-repeat="match in user">
+                <h1>{{match.lender_name}}</h1>
+            </div> -->
+            
+            <div class="match" ng-repeat="user in channels">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="{{(user.logo) ? user.logo : 'http://via.placeholder.com/500x500'}}" alt="logo" class="img-responsive center-block">
+                        </div>
+                        <div class="col-sm-10">
+                            <h1><a ng-href="{{user.url}}">{{user.display_name}}</a></h1>
+                            <p><i>{{user.status}}</i></p>
+                            <span ng-show="streams[$index].stream" class="label label-primary">Live Now</span>
+                            <span ng-show="streams[$index].stream" class="label label-success">{{streams[$index].stream.game}}</span>
+                            <span ng-hide="streams[$index].stream" class="label label-danger">Offline</span>      
+                            <!-- <span class="label label-default">{{(user.streams.stream) ? user.streams.stream.game : 'offline'}}</span> -->
+                        </div>
+                    </div>
+                </div>
+                
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+    <script src="js/services/twitchChannelService.js"></script>
+    <script src="js/controllers/twitchController.js"></script>
+    <script src="js/services/twitchStreamService.js"></script>
+    
+</body>
+</html>
